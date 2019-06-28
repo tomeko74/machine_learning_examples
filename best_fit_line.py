@@ -1,17 +1,17 @@
 from pulp import *
 
-### remove variable b because it is unconstrained
-### it's just a linear combination of the others
-### you can get the result:
+# remove variable b because it is unconstrained
+# it's just a linear combination of the others
+# you can get the result:
 # status: Optimal
 # values:
 #     a: 20000.0
 #     b: -10000.0
 #     c: 0.0
 #     z: 10000.0
-### or any other multiple thereof
-### ax + by - c = 0
-### is the same as y = (-a/b)x + (c/b)
+# or any other multiple thereof
+# ax + by - c = 0
+# is the same as y = (-a/b)x + (c/b)
 
 
 prob = LpProblem("best_fit_line", LpMinimize)
