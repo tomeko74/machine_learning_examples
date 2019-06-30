@@ -1,7 +1,7 @@
 # Course URL:
 # https://deeplearningcourses.com/c/natural-language-processing-with-deep-learning-in-python
 # https://udemy.com/natural-language-processing-with-deep-learning-in-python
-from __future__ import print_function, division
+# from __future__ import print_function, division
 from future.utils import iteritems
 from builtins import range
 # Note: you may need to update your version of future
