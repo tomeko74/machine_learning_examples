@@ -2,9 +2,9 @@
 # https://www.udemy.com/data-science-natural-language-processing-in-python
 
 # Author: http://lazyprogrammer.me
-from __future__ import print_function, division
-from future.utils import iteritems
-from builtins import range
+# from __future__ import print_function, division
+# from future.utils import iteritems
+# from builtins import range
 # Note: you may need to update your version of future
 # sudo pip install -U future
 
@@ -35,15 +35,17 @@ word_vectors = KeyedVectors.load_word2vec_format(
 #  ('jh', 0.5661597847938538),
 #  ('pablo', 0.5631559491157532),
 #  ('malta', 0.5620371103286743)]
+
 def find_analogies(w1, w2, w3):
-  r = word_vectors.most_similar(positive=[w1, w3], negative=[w2])
-  print("%s - %s = %s - %s" % (w1, w2, r[0][0], w3))
+    r = word_vectors.most_similar(positive=[w1, w3], negative=[w2])
+    print("%s - %s = %s - %s" % (w1, w2, r[0][0], w3))
+
 
 def nearest_neighbors(w):
-  r = word_vectors.most_similar(positive=[w])
-  print("neighbors of: %s" % w)
-  for word, score in r:
-    print("\t%s" % word)
+    r = word_vectors.most_similar(positive=[w])
+    print("neighbors of: %s" % w)
+    for word, score in r:
+        print("\t%s" % word)
 
 
 find_analogies('king', 'man', 'woman')
