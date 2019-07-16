@@ -9,11 +9,10 @@
 from nltk.corpus import brown
 import operator
 
-KEEP_WORDS = set([
-    'king', 'man', 'queen', 'woman',
-    'italy', 'rome', 'france', 'paris',
-    'london', 'britain', 'england',
-])
+KEEP_WORDS = {'king', 'man', 'queen', 'woman',
+              'italy', 'rome', 'france', 'paris',
+              'london', 'britain', 'england'
+}
 
 
 def get_sentences():
@@ -90,6 +89,7 @@ def get_sentences_with_word2idx_limit_vocab(n_vocab=2000, keep_words=KEEP_WORDS)
         word2idx_small[word] = new_idx
         idx_new_idx_map[idx] = new_idx
         new_idx += 1
+
     # let 'unknown' be the last token
     word2idx_small['UNKNOWN'] = new_idx
     unknown = new_idx
