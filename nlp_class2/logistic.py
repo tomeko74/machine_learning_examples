@@ -38,13 +38,11 @@ if __name__ == '__main__':
     start_idx = word2idx['START']
     end_idx = word2idx['END']
 
-
     # a matrix where:
     # row = last word
     # col = current word
     # value at [row, col] = p(current word | last word)
     bigram_probs = get_bigram_probs(sentences, V, start_idx, end_idx, smoothing=0.1)
-
 
     # train a logistic model
     W = np.random.randn(V, V) / np.sqrt(V)
@@ -107,7 +105,6 @@ if __name__ == '__main__':
     print("avg_bigram_loss:", avg_bigram_loss)
     plt.axhline(y=avg_bigram_loss, color='r', linestyle='-')
 
-
     # plot smoothed losses to reduce variability
     def smoothed_loss(x, decay=0.99):
         y = np.zeros(len(x))
@@ -130,7 +127,3 @@ if __name__ == '__main__':
     plt.title("Bigram Probs")
     plt.imshow(bigram_probs)
     plt.show()
-
-
-
-
