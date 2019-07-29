@@ -20,7 +20,6 @@ from rnn_class.brown import get_sentences_with_word2idx_limit_vocab, get_sentenc
 
 from markov import get_bigram_probs
 
-
 if __name__ == '__main__':
     # load in the data
     # note: sentences are already converted to sequences of word indexes
@@ -51,15 +50,16 @@ if __name__ == '__main__':
     epochs = 1
     lr = 1e-1
 
+
     def softmax(a):
         a = a - a.max()
         exp_a = np.exp(a)
         return exp_a / exp_a.sum(axis=1, keepdims=True)
 
+
     # what is the loss if we set W = log(bigram_probs)?
     W_bigram = np.log(bigram_probs)
     bigram_losses = []
-
 
     t0 = datetime.now()
     for epoch in range(epochs):
